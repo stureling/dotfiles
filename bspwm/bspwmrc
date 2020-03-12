@@ -6,6 +6,7 @@ if [[ $(hostname) == 'saturnus' ]]; then
 elif [[ $(hostname) == 'jupiter' ]]; then
     bspc monitor DP-4 -d I II III IV V VI VII
     bspc monitor DVI-D-0 -d VIII IX X
+fi
 
 
 

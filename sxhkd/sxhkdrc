@@ -4,11 +4,11 @@
 
 # terminal emulator
 super + Return
-	alacritty
+	termite
 
 # program launcher
 super + @space
-	echo -e "/home/eric/.screenlayout" | dmenu_run
+	dmenu_run
 
 # URL search
 super + alt + @space
@@ -147,39 +147,7 @@ super + alt + x
 super + alt + v
   alacritty -e pulsemixer
 
-# open vim
-super + alt + Return
-  alacritty -e nvim
-
 #set gap width
 super + alt + {1,2,3,4,5,6,7,8,9,0}
   bspc config window_gap {0, 4, 8, 12, 16, 20, 24, 28, 32, 36}
 
-
-#
-#media keys
-#
-# pause/play
-XF86AudioPlay
-  playerctl --player=spotify,vlc,cmus,qtwebflix,firefox play-pause
-
-# next
-XF86AudioNext
-  playerctl --player=spotify,vlc,cmus,qtwebflix next
-
-# previous
-XF86AudioPrev
-  playerctl --player=spotify,vlc,cmus,qtwebflix previous
-
-#vol up
-XF86AudioRaiseVolume
-  pulsemixer --change-volume +5
-  
-#vol down
-XF86AudioLowerVolume
-  pulsemixer --change-volume -5
-
-
-#soundboard
-ctrl + super + alt + 1
-  xdotool keydown voicedsound && mpv --no-video /mnt/garage/Video2/b0dyg0d/And\ I\ Don\'t\ Understand\ Why\ I\ Sleep\ All\ Day-n870MoP35yM.mkv && sleep 0.5 && xdotool keyup voicedsound
