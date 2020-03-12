@@ -1,37 +1,67 @@
-" enable plugins
-execute pathogen#infect()
+" Plugins
+" Plugins will be downloaded under the specified directory.
+call plug#begin('~/.config/nvim/plugins')
 
-" Use spaces instead of tabs
-set expandtab
+Plug 'lervag/vimtex'
 
-" Be smart when using tabs
-set smarttab
-" 1 tab == 2 spaces
-set shiftwidth=2
-set tabstop=2
+call plug#end()
+
+" vimtex
+let g:tex_flavor = 'latex'
+let g:vimtex_view_method = 'zathura'
+let g:vimtex_compiler_progname = 'nvr'
+
+
+" Sets how many lines of history neovim has to remember
+set history=500
 
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
 
-" Number of rows over/under cursor while scrolling
+" Enable syntax highlighting
+syntax enable
+
+" Set to auto read to function like gvim
+set autoread
+au FocusGained * :checktime
+
+" Set the minimum number of lines over/under cursor
 set so=7
 
-" Set linenumbers to hybrid mode: normal mode relative, insert mode absolute
+" Set linenumbers to hybrid: normal mode relative, insert mode absolute
 set number relativenumber
+
+
 augroup numbertoggle
   autocmd!
   autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
 
-" Enable wildmenu
+" Set linenumber colors
+hi CursorLineNr ctermfg=Red
+
+" Turn on the Wild menu
 set wildmenu
+set expandtab
 
+" Be smart when using tabs ;)
+set smarttab
 
-" Enable syntax highlighting
-syntax enable
+" 1 tab == 4 spaces
+set shiftwidth=4
+set tabstop=4
 
-" Colorscheme
-set background=dark
+" Linebreak on 500 characters
+set lbr
+set tw=500
 
+" Auto indent
+set ai
+
+" Smart indent
+set si
+
+" Wrap lines
+set wrap 
