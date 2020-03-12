@@ -91,8 +91,8 @@ super + {o,i}
 super + {_,shift + }{8-9,0}
 	bspc {desktop -f,node -d} '^{1-2,3}'
 
-super + {_,shift + }{1-7}
-	bspc {desktop -f,node -d} '^{4-9}'
+super + {_,shift + }{1-6,7}
+	bspc {desktop -f,node -d} '^{4-9,10}'
 
 #
 # preselect
