@@ -9,9 +9,9 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 # Launch bar
 if [[ $(hostname) == 'saturnus' ]]; then
     polybar top  &
-
 elif [[ $(hostname) == 'jupiter' ]]; then
     #TODO Add the polybar code for jupiter
+    polybar top &
 fi
 
 echo "Bars launched..."
