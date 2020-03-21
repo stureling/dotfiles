@@ -3,6 +3,8 @@
 call plug#begin('~/.config/nvim/plugins')
 
 Plug 'lervag/vimtex'
+Plug 'junegunn/vim-easy-align'
+Plug 'dense-analysis/ale'
 
 call plug#end()
 
@@ -11,6 +13,8 @@ let g:tex_flavor = 'latex'
 let g:vimtex_view_method = 'zathura'
 let g:vimtex_compiler_progname = 'nvr'
 
+" ale
+let g:ale_completion_enabled = 1
 
 " Sets how many lines of history neovim has to remember
 set history=500
