@@ -7,12 +7,8 @@ super + Return
 	termite
 
 # program launcher
-super + @space
+super + space
 	dmenu_run
-
-# URL search
-super + alt + @space
-	links-dmenu
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -21,6 +17,10 @@ super + Escape
 #
 # bspwm hotkeys
 #
+
+# shutdown dialog
+super + alt + q
+	shutdown-dialog
 
 # quit bspwm normally
 super + alt + Escape
@@ -88,12 +88,6 @@ super + {o,i}
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
-#super + {_,shift + }{8-9,0}
-#	bspc {desktop -f,node -d} '^{1-2,3}'
-
-#super + {_,shift + }{1-6,7}
-#	bspc {desktop -f,node -d} '^{4-9,10}'
-
 #
 # preselect
 #
@@ -103,8 +97,8 @@ super + ctrl + {h,j,k,l}
 	bspc node -p {west,south,north,east}
 
 # preselect the ratio
-#super + ctrl + {1-9}
-#	bspc node -o 0.{1-9}
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
 
 # cancel the preselection for the focused node
 super + ctrl + space
@@ -130,24 +124,83 @@ super + alt + shift + {h,j,k,l}
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
-
 #
-# custom commands
+# program shortcuts
 #
 
-# change keyboard layout
-super + alt + c
-	setxkbmap us
+# neovim
+super + alt + Return
+  termite -e nvim ./
 
-#change keyboard layout
-super + alt + x
-	setxkbmap se
+# bluetooth control
+super + alt + b
+  termite -e bluetoothctl
 
-# open volume control
+# volume control
 super + alt + v
-  alacritty -e pulsemixer
+  termite -e pulsemixer
 
-#set gap width
-super + alt + {1,2,3,4,5,6,7,8,9,0}
-  bspc config window_gap {0, 4, 8, 12, 16, 20, 24, 28, 32, 36}
+# local music player
+super + alt + m
+  termite -e cmus
+
+# networking menu
+super + alt + n
+  networkmanager_dmenu
+
+#
+# other
+#
+
+# set keyboard layout us
+super + alt + c
+  setxkbmap us
+
+# set keyboard layout se
+super + alt + x
+  setxkbmap se
+
+# lock screen
+super + alt + space
+  betterlockscreen -l blur
+
+# pause/play
+XF86AudioPlay
+  playerctl --player=spotify,vlc,cmus,mpv,mpd play-pause
+
+# pause/play
+XF86AudioNext
+  playerctl --player=spotify,vlc,cmus,mpv,mpd next
+
+# previous
+XF86AudioPrev
+  playerctl --player=spotify,vlc,cmus,mpv,mpd previous
+
+# brightness up
+XF86MonBrightnessUp
+  light -A 2
+
+# brightness down
+XF86MonBrightnessDown
+  light -U 2
+
+# volume up
+XF86AudioRaiseVolume
+  pulsemixer --change-volume +3
+
+# volume down
+XF86AudioLowerVolume
+  pulsemixer --change-volume -3
+
+# mute
+XF86AudioMute
+  pulsemixer --toggle-mute
+
+# custom launch button
+XF86LaunchA
+  firefox
+
+# custom launch button
+XF86LaunchB
+  termite
 

@@ -1,9 +1,0 @@
-#! /bin/sh
-
-# BSPWM
-bspc config focused_border_color "#6679cc"
-bspc config normal_border_color "#202746"
-
-# FEH
-convert -size 100x100 xc:#202746 $HOME/.backgrounds/back.png
-feh --bg-fill '/home/eris/.backgrounds/back.png'

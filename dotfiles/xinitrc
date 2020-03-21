@@ -1,0 +1,12 @@
+systemctl --user import-environment DISPLAY
+startup.sh
+launchPolybar.sh &
+xrdb ~/.Xresources &
+keyboard.sh &
+picom &
+dunst & 
+unclutter &
+xsetroot -cursor_name trek &
+$HOME/.fehbg &
+
+exec bspwm

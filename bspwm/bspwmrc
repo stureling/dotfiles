@@ -1,9 +1,15 @@
-#! /bin/sh
+#!/bin/sh
 gap=4
 border=3
 
-bspc monitor DP-4 -d I II III IV V VI VII
-bspc monitor DVI-D-0 -d VIII IX X
+if [[ $(hostname) == 'saturnus' ]]; then
+    bspc monitor eDP1 -d I II III IV V VI VII VIII IX X
+elif [[ $(hostname) == 'jupiter' ]]; then
+    bspc monitor DP-4 -d I II III IV V VI VII
+    bspc monitor DVI-D-0 -d VIII IX X
+fi
+
+
 
 #Border
 bspc config border_width         $border
@@ -24,7 +30,7 @@ bspc config gapless_monocle	false
 bspc config single_monocle	true
 bspc config initial_polarity second_child
 
-bspc rule -a steam state=floating
+bspc rule -a Steam state=floating
 #bspc rule -a Gimp desktop='^8' state=floating follow=on
 #bspc rule -a Chromium desktop='^2'
 #bspc rule -a termite state=pseudo_tiled
