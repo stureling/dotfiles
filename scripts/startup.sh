@@ -7,6 +7,7 @@ if [[ $(hostname) == 'saturnus' ]]; then
      sxhkd -c $HOME/.config/sxhkd/sxhkd_saturnus &
 elif [[ $(hostname) == 'jupiter' ]]; then
     2screens.sh
+    setxkbmap -option caps:swapescape
     xinput set-prop "Kingsis Peripherals ZOWIE Gaming mouse" "libinput Accel Profile Enabled" 0, 1 &
     sxhkd -c $HOME/.config/sxhkd/sxhkd_jupiter &
 fi
