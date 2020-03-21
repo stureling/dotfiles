@@ -16,7 +16,7 @@ super + alt + @space
 
 # make sxhkd reload its configuration files:
 super + Escape
-	pkill -USR1 -x sxhkd
+	pkill -USR1 -x sxhkd -c $HOME/.config/sxhkd/sxhkd_jupiter
 
 #
 # bspwm hotkeys
@@ -85,14 +85,14 @@ super + {o,i}
 	bspc wm -h on
 
 # focus or send to the given desktop
-#super + {_,shift + }{1-9,0}
-#	bspc {desktop -f,node -d} '^{1-9,10}'
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
 
-super + {_,shift + }{8-9,0}
-	bspc {desktop -f,node -d} '^{1-2,3}'
+#super + {_,shift + }{8-9,0}
+#	bspc {desktop -f,node -d} '^{1-2,3}'
 
-super + {_,shift + }{1-6,7}
-	bspc {desktop -f,node -d} '^{4-9,10}'
+#super + {_,shift + }{1-6,7}
+#	bspc {desktop -f,node -d} '^{4-9,10}'
 
 #
 # preselect
@@ -178,8 +178,3 @@ XF86AudioRaiseVolume
 #vol down
 XF86AudioLowerVolume
   pulsemixer --change-volume -5
-
-
-#soundboard
-ctrl + super + alt + 1
-  xdotool keydown voicedsound && mpv --no-video /mnt/garage/Video2/b0dyg0d/And\ I\ Don\'t\ Understand\ Why\ I\ Sleep\ All\ Day-n870MoP35yM.mkv && sleep 0.5 && xdotool keyup voicedsound
