@@ -3,7 +3,7 @@ startup.sh
 launchPolybar.sh &
 xrdb ~/.Xresources &
 keyboard.sh &
-picom &
+compton &
 dunst & 
 unclutter &
 xsetroot -cursor_name trek &

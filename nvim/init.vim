@@ -1,3 +1,4 @@
+if !exists('g:vscode')
 " Plugins
 " Plugins will be downloaded under the specified directory.
 call plug#begin('~/.config/nvim/plugins')
@@ -5,8 +6,17 @@ call plug#begin('~/.config/nvim/plugins')
 Plug 'lervag/vimtex'
 Plug 'junegunn/vim-easy-align'
 Plug 'dense-analysis/ale'
+Plug 'itchyny/lightline.vim'
+Plug 'preservim/nerdtree'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'ntk148v/vim-horizon'
 
 call plug#end()
+" Colorscheme
+set termguicolors
+colorscheme horizon
+let g:lightline = {'colorscheme' : 'horizon'}
 
 " vimtex
 let g:tex_flavor = 'latex'
@@ -69,3 +79,17 @@ set si
 
 " Wrap lines
 set wrap 
+
+":set clipboard=unnamedplus " sets all yanks to use the clipboard
+
+" " Copy to clipboard
+vnoremap  <leader>y  "+y
+nnoremap  <leader>Y  "+yg_
+nnoremap  <leader>y  "+y
+
+" " Paste from clipboard
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+vnoremap <leader>p "+p
+vnoremap <leader>P "+P
+endif

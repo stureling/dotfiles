@@ -135,14 +135,6 @@ super + {Left,Down,Up,Right}
 # custom commands
 #
 
-# change keyboard layout
-super + alt + c
-	setxkbmap us
-
-#change keyboard layout
-super + alt + x
-	setxkbmap se
-
 # open volume control
 super + alt + v
   alacritty -e pulsemixer

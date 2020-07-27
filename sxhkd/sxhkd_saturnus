@@ -152,14 +152,6 @@ super + alt + n
 # other
 #
 
-# set keyboard layout us
-super + alt + c
-  setxkbmap us
-
-# set keyboard layout se
-super + alt + x
-  setxkbmap se
-
 # lock screen
 super + alt + space
   betterlockscreen -l blur

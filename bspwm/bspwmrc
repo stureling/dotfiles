@@ -5,8 +5,8 @@ border=3
 if [[ $(hostname) == 'saturnus' ]]; then
     bspc monitor eDP1 -d I II III IV V VI VII VIII IX X
 elif [[ $(hostname) == 'jupiter' ]]; then
-    bspc monitor DP-4 -d I II III IV V VI VII
-    bspc monitor DVI-D-0 -d VIII IX X
+    bspc monitor DP-2 -d I II III IV V VI VII VIII IX X
+    #bspc monitor DVI-D-0 -d VIII IX X
 fi
 
 
