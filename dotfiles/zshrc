@@ -22,7 +22,7 @@ if [ "$TERM" = "linux" ]; then
     clear
 fi
 
-PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$HOME/.gem/ruby/2.7.0/bin:$HOME/.config/scripts
+PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$HOME/.gem/ruby/2.7.0/bin:$HOME/.config/scripts:/home/eric/courses/tdiu16-labs/src/utils:/home/eric/.cargo/bin
 
 alias ls='ls --color=auto'
 alias tarball="tar -czvf"

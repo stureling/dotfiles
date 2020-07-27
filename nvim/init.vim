@@ -3,8 +3,10 @@ if !exists('g:vscode')
 " Plugins will be downloaded under the specified directory.
 call plug#begin('~/.config/nvim/plugins')
 
+Plug 'itchyny/lightline.vim'
 Plug 'lervag/vimtex'
 Plug 'junegunn/vim-easy-align'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dense-analysis/ale'
 Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdtree'
@@ -24,7 +26,12 @@ let g:vimtex_view_method = 'zathura'
 let g:vimtex_compiler_progname = 'nvr'
 
 " ale
-let g:ale_completion_enabled = 1
+let g:ale_linters = {'rust': ['rls']}
+
+" coc
+source /home/eric/.config/nvim/coc.vim
+
+" Other
 
 " Sets how many lines of history neovim has to remember
 set history=500
@@ -92,4 +99,8 @@ nnoremap <leader>p "+p
 nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P
+" 
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
 endif
