@@ -12,7 +12,7 @@ if [[ $(hostname) == 'saturnus' ]]; then
 elif [[ $(hostname) == 'jupiter' ]]; then
     #TODO Add the polybar code for jupiter
     polybar jupiter &
-#    polybar jupiter2 &
+    polybar jupiter2 &
 fi
 
 echo "Bars launched..."
